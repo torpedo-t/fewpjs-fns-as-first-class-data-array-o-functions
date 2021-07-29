@@ -22,16 +22,18 @@ function unleashDog(dogName, dogBreed) {
     return `Unleash ${dogName} the ${dogBreed}`
 }
 
-let routine = [wakeDog, leashDog, walkToPark, throwFrisbee, walkHome, unleashDog]
+const routine = [wakeDog, leashDog, walkToPark, throwFrisbee, walkHome, unleashDog]
 
 // iterate over routine array to get access to each function
 // call each function in the array, passing dogName, dogBreed received by exerciseDog function
 // store return value of each functions call in a new array
 // return the new array
 function exerciseDog(dogName, dogBreed) {
-    let newArray = routine.map
+    let newArray = []
     for(let i = 0; i < routine.length; i++) {
-        routine[i]
-        i(dogName, dogBreed)
+        let fn = routine[i]
+        let exercise = fn(dogName, dogBreed)
+        newArray.push(exercise)
     }
+    return newArray
 }
