@@ -1,6 +1,5 @@
 function wakeDog(dogName, dogBreed) {
     return `Wake ${dogName} the ${dogBreed}`
-    // console.log('Wake ${dogName} the ${dogBreed}')
 }
 
 function leashDog(dogName, dogBreed) {
@@ -25,9 +24,13 @@ function unleashDog(dogName, dogBreed) {
 
 let routine = [wakeDog, leashDog, walkToPark, throwFrisbee, walkHome, unleashDog]
 
+// iterate over routine array to get access to each function
+// call each function in the array, passing dogName, dogBreed received by exerciseDog function
+// store return value of each functions call in a new array
+// return the new array
 function exerciseDog(dogName, dogBreed) {
-    let array = routine
-    for(let i = 0; i < array.length; i++) {
-        array.push()
+    let newArray = routine.map
+    for(let i = 0; i < routine.length; i++) {
+        routine[i](dogName, dogBreed)
     }
 }
